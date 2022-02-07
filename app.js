@@ -8,7 +8,7 @@ const bodyparser = require('body-parser')
 main().catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect('mongodb://localhost:27017/contactDance');
+    await mongoose.connect(process.env.MONGODB_URL ||'mongodb://localhost:27017/contactDance');
 }
 
 // Define mongoose schema
